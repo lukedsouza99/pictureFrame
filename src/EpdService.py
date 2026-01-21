@@ -1,5 +1,5 @@
 import logging
-from edpconfig import epdconfig
+from . import epdconfig
 from PIL import Image
 import io
 
