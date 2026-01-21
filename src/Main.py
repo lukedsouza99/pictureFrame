@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template, redirect, url_for
 from ImageProcessingService import ImageProcessingService
+from EpdService import EPD
 
 ImageProcessingService = ImageProcessingService()
+epdService = EPD()
 
 
 app = Flask(__name__)
@@ -16,7 +18,8 @@ def index():
 @app.route('/', methods=['POST'])
 def upload_file():
     file = request.files['file']
-    ImageProcessingService.processImage(file)
+    processedImage = ImageProcessingService.processImage(file)
+    print(processedImage)
     return redirect(url_for('index'))
 
 
