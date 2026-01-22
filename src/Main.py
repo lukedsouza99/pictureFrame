@@ -4,6 +4,8 @@ from EpdService import EPD
 
 ImageProcessingService = ImageProcessingService()
 epdService = EPD()
+epdService.init()
+epdService.Clear()
 
 
 app = Flask(__name__)
@@ -20,6 +22,7 @@ def upload_file():
     file = request.files['file']
     processedImage = ImageProcessingService.processImage(file)
     print(processedImage)
+    epdService.display(epdService.getbuffer(processedImage))
     return redirect(url_for('index'))
 
 
