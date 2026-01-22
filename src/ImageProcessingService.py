@@ -14,6 +14,6 @@ class ImageProcessingService:
         image = Image.open(unprocessedImage)
         width, height = image.size
         if (height > width):
-            image = image.rotate(90)
+            image = image.rotate(90, expand=True)
         resizedImage = image.resize((800,480))
         return resizedImage
