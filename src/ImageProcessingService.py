@@ -12,5 +12,5 @@ class ImageProcessingService:
     def processImage(self, unprocessedImage):
         # resize / rotate depending on height and width
         image = Image.open(unprocessedImage)
-        resizedImage = image.resize((100,100))
+        resizedImage = image.resize((800,480))
         return resizedImage
