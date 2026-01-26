@@ -16,5 +16,6 @@ class ImageProcessingService:
         if (height > width):
             image = image.rotate(270, expand=True)
         resizedImage = image.resize((800,480))
-        enhancer = ImageEnhance.Contrast(resizedImage)
+        # enhancer = ImageEnhance.Contrast(resizedImage)
+        enhancer = ImageEnhance.Color(resizedImage)
         return enhancer.enhance(2)
