@@ -18,4 +18,7 @@ class ImageProcessingService:
         resizedImage = image.resize((800,480))
         # enhancer = ImageEnhance.Contrast(resizedImage)
         enhancer = ImageEnhance.Color(resizedImage)
-        return enhancer.enhance(2)
+        try:
+            return enhancer.enhance(2)
+        except:
+            return resizedImage
