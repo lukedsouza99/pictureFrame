@@ -9,7 +9,7 @@ class ImageService:
 
 
     def save(self, image):
-        image.save(self.PATH)
+        image.save("picture.png")
 
     
     def load(self):
