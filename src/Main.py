@@ -2,7 +2,10 @@ from flask import Flask, request, render_template, redirect, url_for
 from ImageProcessingService import ImageProcessingService
 from EpdService import EPD
 from ImageService import ImageService
+from StartUpService import StartUpService
 
+startUpService = StartUpService()
+startUpService.setUp()
 ImageProcessingService = ImageProcessingService()
 imageService = ImageService()
 epdService = EPD()

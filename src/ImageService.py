@@ -2,14 +2,14 @@ from PIL import Image
 
 class ImageService:
 
-    PATH = "../resources/picture/picture.png"
+    PATH = "../resources/pictures/picture.png"
 
     def __init__(self):
         pass
 
 
     def save(self, image):
-        image.save("picture.png")
+        image.save(self.PATH)
 
     
     def load(self):
