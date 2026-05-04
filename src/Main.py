@@ -10,9 +10,8 @@ ImageProcessingService = ImageProcessingService()
 imageService = ImageService()
 epdService = EPD()
 epdService.init()
-epdService.Clear()
 # check if file exists
-#epdService.display(epdService.getbuffer(imageService.load()))
+epdService.display(epdService.getbuffer(imageService.load()))
 
 
 app = Flask(__name__)
@@ -26,12 +25,14 @@ def index():
 
 @app.route('/', methods=['POST'])
 def upload_file():
-    file = request.files['file']
-    processedImage = ImageProcessingService.processImage(file)
-    imageService.save(processedImage)
-    print(processedImage)
-    epdService.display(epdService.getbuffer(processedImage))
-    epdService.display(epdService.getbuffer(imageService.load()))
+    if request.form.get('clear') == 'Clear':
+        epdService.Clear()
+    else:
+        file = request.files['file']
+        processedImage = ImageProcessingService.processImage(file)
+        imageService.save(processedImage)
+        print(processedImage)
+        epdService.display(epdService.getbuffer(imageService.load()))
     return redirect(url_for('index'))
 
 
