@@ -6,7 +6,7 @@ class StartUpService:
         pass
  
     
-    def createResourcesDirectory():
+    def createResourcesDirectory(self):
         # Get the parent of the current working directory (src)
         parent_dir = path.dirname(getcwd())
         
