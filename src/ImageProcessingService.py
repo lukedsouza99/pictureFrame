@@ -22,3 +22,13 @@ class ImageProcessingService:
             return enhancer.enhance(2)
         except:
             return resizedImage
+
+
+    def makeBlackImage(self):
+        image = Image.new("RGB", (800, 480), (0, 0, 0))
+        return image
+    
+
+    def makeWhiteImage(self):
+        image = Image.new("RGB", (800, 480), (255, 255, 255))
+        return image
