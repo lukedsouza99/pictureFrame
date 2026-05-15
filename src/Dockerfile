@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     libgpiod-dev \
     swig \
+    liblgpio-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
