@@ -3,7 +3,6 @@ from ImageProcessingService import ImageProcessingService
 from EpdService import EPD
 from ImageService import ImageService
 from StartUpService import StartUpService
-import time
 
 startUpService = StartUpService()
 startUpService.setUp()
@@ -27,15 +26,7 @@ def index():
 @app.route('/', methods=['POST'])
 def upload_file():
     if request.form.get('clear') == 'Clear':
-        for i in range(1, 1000):
-            epdService.display(epdService.getbuffer(ImageProcessingService.makeBlackImage()))
-            time.sleep(1)
-            epdService.Clear()
-            time.sleep(1)
-            epdService.display(epdService.getbuffer(ImageProcessingService.makeWhiteImage()))
-            time.sleep(1)
-            epdService.Clear()
-            time.sleep(1)
+        epdService.Clear()
     else:
         file = request.files['file']
         processedImage = ImageProcessingService.processImage(file)
