@@ -25,10 +25,10 @@ class ImageProcessingService:
 
 
     def makeBlackImage(self):
-        image = Image.new("RGB", (800, 480), (0, 0, 0))
+        image = Image.new("RGB", (800, 400), (0, 0, 0))
         return image
     
 
     def makeWhiteImage(self):
-        image = Image.new("RGB", (800, 480), (255, 255, 255))
+        image = Image.new("RGB", (800, 400), (255, 255, 255))
         return image
