@@ -3,6 +3,7 @@ services:
     build: .
     ports:
       - "5000:5000"
+    restart: unless-stopped
     privileged: true
     devices:
       - /dev/gpiomem:/dev/gpiomem
@@ -12,5 +13,4 @@ services:
       - /sys:/sys
     environment:
       - FLASK_ENV=production
-    restart:
-      unless-stopped
+      - GPIOZERO_PIN_FACTORY=lgpio
