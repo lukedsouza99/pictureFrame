@@ -16,4 +16,4 @@ class ImageService:
         try:
             return Image.open(self.PATH)
         except:
-            return Image.new("RGB", (800, 400), (255, 255, 255))
+            return Image.new("RGB", (800, 480), (255, 255, 255))
