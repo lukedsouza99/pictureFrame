@@ -13,4 +13,7 @@ class ImageService:
 
     
     def load(self):
-        return Image.open(self.PATH)
+        try:
+            return Image.open(self.PATH)
+        except:
+            return Image.new("RGB", (800, 400), (255, 255, 255))
