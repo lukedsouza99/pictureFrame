@@ -4,8 +4,9 @@ from EpdService import EPD
 from ImageService import ImageService
 from StartUpService import StartUpService
 
-startUpService = StartUpService()
-startUpService.setUp()
+# Not needed - docker can do this
+# startUpService = StartUpService()
+# startUpService.setUp()
 ImageProcessingService = ImageProcessingService()
 imageService = ImageService()
 epdService = EPD()

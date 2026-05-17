@@ -2,7 +2,7 @@ from PIL import Image
 
 class ImageService:
 
-    PATH = "../resources/pictures/picture.png"
+    PATH = "/data/picture.png"
 
     def __init__(self):
         pass
